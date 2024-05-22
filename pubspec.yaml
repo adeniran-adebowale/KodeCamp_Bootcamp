@@ -1,0 +1,11 @@
+name: Kodecamp
+description: "A new Dart project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  http: any
+  simple_json_mapper: ^2.2.0
