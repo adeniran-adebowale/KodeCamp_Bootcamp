@@ -1,13 +1,10 @@
 class Geo {
-  String lat;
-  String lng;
+  String? lat;
+  String? lng;
 
-  Geo({
-    required this.lat,
-    required this.lng,
-  });
+  Geo({this.lat, this.lng});
 
-  fromJson(Map<String, dynamic> json) {
+  Geo.fromJson(Map<String, dynamic> json) {
     lat = json['lat'];
     lng = json['lng'];
   }

@@ -1,15 +1,11 @@
 class Company {
-  String name;
-  String catchPhrase;
-  String bs;
+  String? name;
+  String? catchPhrase;
+  String? bs;
 
-  Company({
-    required this.name,
-    required this.catchPhrase,
-    required this.bs,
-  });
+  Company({this.name, this.catchPhrase, this.bs});
 
-  fromJson(Map<String, dynamic> json) {
+  Company.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     catchPhrase = json['catchPhrase'];
     bs = json['bs'];

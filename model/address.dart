@@ -1,27 +1,22 @@
 import 'geo.dart';
 
 class Address {
-  String street;
-  String suite;
-  String city;
-  String zipcode;
-  Geo geo;
+  String? street;
+  String? suite;
+  String? city;
+  String? zipcode;
+  Geo? geo;
 
-  Address({
-    required this.street,
-    required this.suite,
-    required this.city,
-    required this.zipcode,
-    required this.geo,
-  });
+  Address({this.street, this.suite, this.city, this.zipcode, this.geo});
 
-  fromJson(Map<String, dynamic> json) {
+  Address.fromJson(Map<String, dynamic> json) {
     street = json['street'];
     suite = json['suite'];
     city = json['city'];
     zipcode = json['zipcode'];
-    geo = json['geo'] != null ? geo.fromJson(json['geo']) : null;
+    geo = json['geo'] != null ? new Geo.fromJson(json['geo']) : null;
   }
+
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['street'] = this.street;
@@ -29,7 +24,7 @@ class Address {
     data['city'] = this.city;
     data['zipcode'] = this.zipcode;
     if (this.geo != null) {
-      data['geo'] = this.geo.toJson();
+      data['geo'] = this.geo!.toJson();
     }
     return data;
   }
