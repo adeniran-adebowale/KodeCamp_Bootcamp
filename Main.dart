@@ -4,7 +4,7 @@ import 'model/userdetail.dart';
 import 'util/apiservice.dart';
 
 Future<void> main() async {
-  final String URI = "https://jsonplaceholder.typicode.com/users";
+  final String URI = "https://jsonplaceholder.typicode.com/users/11";
 
   late List<UserDetail>? userDetails=[];
   

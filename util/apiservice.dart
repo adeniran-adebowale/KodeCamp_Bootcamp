@@ -19,6 +19,8 @@ class ApiConsumer extends Datafetcher<List> {
       print(e);
     }
 
+   if(response.statusCode==200){
+
    
     if (jsonDecode(response.body).runtimeType==List) {
       parsedData = jsonDecode(response.body);
@@ -26,9 +28,13 @@ class ApiConsumer extends Datafetcher<List> {
       parsedData =[];
       parsedData.add(jsonDecode(response.body));
     }
-    
-print(parsedData.runtimeType==List);
-    
+
+// print(parsedData.runtimeType==List);
+   } else {
+    parsedData=[];
+    parsedData.add({"Error":response.statusCode});
+
+   }
     return Future.value(parsedData);
   }
 
