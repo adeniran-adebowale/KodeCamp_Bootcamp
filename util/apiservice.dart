@@ -20,8 +20,14 @@ class ApiConsumer extends Datafetcher<List> {
     }
 
    
-    parsedData = jsonDecode(response.body);
-
+    if (jsonDecode(response.body).runtimeType==List) {
+      parsedData = jsonDecode(response.body);
+    } else {
+      parsedData =[];
+      parsedData.add(jsonDecode(response.body));
+    }
+    
+print(parsedData.runtimeType==List);
     
     return Future.value(parsedData);
   }
